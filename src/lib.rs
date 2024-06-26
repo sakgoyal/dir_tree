@@ -1,15 +1,26 @@
-use std::{io::Error,path::Path};
+use std::path::Path;
 use serde_json::{Map, Value};
 use walkdir::WalkDir;
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_dir_tree() {
+        let res = generate_directory_tree("./src");
+        let string = serde_json::to_string(&res).unwrap();
+        print!("{}", string);
+        assert_eq!(string, r#"{"/":["lib.rs"]}"#);
+    }
+}
 
 /// Generate a JSON tree based on the provided path
 ///
 /// ```
-/// let res = generate_directory_tree("./");
-/// assert_eq!(serde_json::to_string(&res), "");
+/// let res = generate_directory_tree(r#"./src"#);
+/// assert_eq!(serde_json::to_string(&res), r#"{"/":["lib.rs"]}"#);
 /// ```
-///
-///
 fn generate_directory_tree(path: &str) -> Map<String, Value> {
     let mut dir_map = Map::new();
 

@@ -4,7 +4,7 @@ version = 3
 
 [[package]]
 name = "dir_tree"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "serde_json",
  "walkdir",
