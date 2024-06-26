@@ -9,11 +9,10 @@ File structure:
 /
 L src/
     L lib.rs
-    L dir_trees.rs
 ```
 ```rust
 let res = generate_directory_tree("./src");
-assert_eq!(serde_json::to_string(&res), r#"{"/":["dir_tree.rs","lib.rs"]}");
+assert_eq!(serde_json::to_string(&res), r#"{"/":["lib.rs"]}"#);
 ```
 
 File structure:
