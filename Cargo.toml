@@ -1,6 +1,6 @@
 [package]
 name = "dir_tree"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 description = "Walk a directory and convert to json object"
 license = "MIT"
@@ -9,6 +9,10 @@ repository = "https://github.com/sakgoyal/dir_tree"
 keywords = ["tree", "fs", "json", "walk", "dir"]
 categories = ["filesystem"]
 
+# [lib]
+# name = "foo"           # The name of the target.
+# path = "src/lib.rs"    # The source file of the target.
+# crate-type = ["lib"]
 
 [dependencies]
 serde_json = "1.0.118"
