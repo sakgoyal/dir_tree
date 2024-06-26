@@ -1,0 +1,10 @@
+[package]
+name = "dir_tree"
+version = "0.1.0"
+edition = "2021"
+description = "A library to allow an easy interface to walking a directory and getting a json string of all files"
+license = "MIT"
+
+[dependencies]
+serde_json = "1.0.118"
+walkdir = "2.5.0"
